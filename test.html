@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script
+ src='https://cdnjs.cloudflare.com/ajax/libs/riot/2.3.18/riot+compiler.js'></script>
+<title>RiotJS Test</title>
+</head>
+<body>
+    <item></item>
+    <script type="riot/tag">
+      <item>
+        <!-- this.item_list を {item_list} として each属性で指定 -->
+        <div each='{item_list}'>
+          <h1>{ name }</h1>
+          <p>{ quote }</p>
+        </div>
+
+        // JS内で要素のデータを定義する
+        this.item_list = [
+          {name: 'Annoy-o-Tron', quote: 'Hello, Hello, Hello'},
+          {name: 'Northshire Cleric', quote: 'Is someone injured?'},
+        ]
+      </item>
+    </script>
+
+    <script>
+      riot.mount('*');
+    </script>
+  </body>
+  </html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script
+ src='https://cdnjs.cloudflare.com/ajax/libs/riot/2.3.18/riot+compiler.js'></script>
+<title>RiotJS Test</title>
+</head>
+<body>
+ <!-- タグを展開する場所 -->
+ <item name='Annoy-o-tron' quote='Hello, Hello, Hello'></item>
+ <item name='Northshire Cleric' quote='Is someone injured?'></item>
+
+ <script type="riot/tag">
+	<!-- タグの定義 -->
+    <item>
+    <h1>{ name }</h1>
+    <p>{ quote }</p>
+    this.name = opts.name;
+    this.quote = opts.quote;
+    </item>
+    </script>
+
+ <script>
+    // マウント
+    riot.mount('*');
+  </script>
+</body>
+</html>
