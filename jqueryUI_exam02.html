@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript"
+ src="./js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script type="text/javascript"
+ src="./js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $(".dragDiv").draggable();
+    $("#div3").droppable(
+        {
+          accept : ".dragDiv",
+          drop : function(event, ui) {
+            var dragId = ui.draggable.attr("id");
+            if ($(this).find(".drop" + dragId).length == 0) {
+              $(this).append(
+                  '<span class="drop' + dragId + '">' + ui.draggable.text()
+                      + 'is dropped here</span>' + '<br/>');
+            }
+          },
+          out : function(event, ui) {
+            var dragId = ui.draggable.attr("id");
+            $(this).find(".drop" + dragId).remove();
+          }
+        });
+  });
+</script>
+<style type="text/css">
+div {
+	color: fff;
+	width: 100px;
+	height: 100px;
+	background-color: #09C;
+}
+
+#div3 {
+	width: 50%;
+	height: 50%;
+	background-color: gray;
+}
+</style>
+</head>
+<body>
+ <div id="div1" class="dragDiv">dragDiv1</div>
+ <div id="div2" class="dragDiv">dragDiv2</div>
+ <div id="div3">drop here!</div>
+</body>
+</html>

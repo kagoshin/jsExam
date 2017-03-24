@@ -1,0 +1,38 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript">
+  testObj = {
+    aaa : "my id is aaa",
+    bbb : "my id is bbb"
+  };
+
+  $(function() {
+    $("div").click(function() {
+      var myName = $(testObj).prop(this.id);
+      alert(myName)
+    });
+  });
+</script>
+
+<style type="text/css">
+<!--
+div {
+	color: fff;
+	width: 100px;
+	height: 100px;
+	background-color: #09C;
+}
+-->
+</style>
+
+</head>
+
+<body>
+ <div id="aaa"></div>
+ <br>
+ <div id="bbb"></div>
+</body>
+</html>

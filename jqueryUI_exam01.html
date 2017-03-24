@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript"
+ src="./js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script type="text/javascript"
+ src="./js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    // $("#div1").draggable();
+    $("#div1").draggable({axis : "x"});
+    // $("#div2").draggable();
+    $("#div2").draggable({axis : "y"});
+    $("#div3").draggable({containment : ".baDiv"});
+    $("#div4").draggable({containment : ".baDiv", snap : ".baDiv"});
+  });
+</script>
+<style type="text/css">
+div {
+	color: fff;
+	width: 100px;
+	height: 100px;
+	background-color: #09C;
+}
+.badiv {
+    width : 50%;
+    height : 50%;
+    background-color : gray;
+}
+</style>
+</head>
+<body>
+ <div id="div1">div1だよ</div>
+ <div id="div2">div2だよ</div>
+ <div class="baDiv">
+    <div id="div3">div3だよ</div>
+    <div id="div4">div4だよ</div>
+ </div>
+</body>
+</html>
